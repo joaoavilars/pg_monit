@@ -1,4 +1,12 @@
-### Configuração do userparameters:
+### Monitoramento de tamanho de banco de dados e tabelas Postgresql
+
+Esse projeto visa efetuar o monitoramento dos tamanhos de databases e tabelas do postgresql, sendo que a saida dos scripts será em json compativel com o zabbix.
+
+É necessario que o usuario de conexão ao banco esteja configurado como trust no arquivo pg_hba.conf.
+
+
+
+## Configuração do userparameters:
 
 ```bash
 # Descoberta de Bancos de Dados
@@ -16,7 +24,7 @@ UserParameter=pgsql.data.tables[*],/etc/zabbix/scripts/pg_size_tables.sh $1 $2
 ```
 
 
-### Configuração de Itens no zabbix:
+## Configuração de Itens no zabbix:
 
 A. Crie o Template para Bancos de Dados (Nível 2)
 Vamos começar criando o template que será aplicado aos bancos de dados descobertos.
